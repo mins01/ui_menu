@@ -80,27 +80,11 @@
 .menu.on > .menu-box{
 	opacity: 1;
 }
-.menu > .menu-label::after{
-	display: block;
-	width:0.2em;
-	content: "";
-	flex: 0 0 auto;
-	align-self: center;
-	height:0.2em;
-}
-.menu-has-child > .menu-label::after{
-	background-color: #ccc;
-	transition: all 0.3s;
 
-}
-.menu-has-child.on > .menu-label::after{
-	background-color: #7ab6cf;
-	height: 1em;
-}
 
 .menu-hr{
 	height:1px;
-	margin:0.2em 1px;
+	margin:1px 1px;
 	background-color: #aaa;
 }
 
@@ -135,4 +119,22 @@ style
 
 .menu-hr{
 	border-radius: 5px;;
+}
+
+.menu > .menu-label::after{
+	display: block;
+	width:0.2em;
+	content: "";
+	flex: 0 0 auto;
+	align-self: center;
+	height:0.2em;
+}
+.menu-has-child > .menu-label::after{
+	background-color: #ccc;
+	transition: all 0.3s;
+
+}
+.menu-has-child.on > .menu-label::after{
+	background-color: #7ab6cf;
+	height: 1em;
 }
