@@ -1,12 +1,12 @@
 @charset "utf-8";
 /* .ui-menu{
-
+	
 } */
 
 .menu-root{
 	/* background-color: #eee; */
 	box-sizing: content-box;
-	word-break: break-all;
+	white-space: nowrap;
 }
 .menu-box{
 	/* background-color: #ccc; */
@@ -22,13 +22,13 @@
 .menu-box:not(.menu-root){
 	position: static;
 	display: none;
-	width:100%;
-	transform: translateX(10px);
+	/* min-width:100%; */
+	/* transform: translateX(10px); */
 	margin-bottom:0.5em;
 }
 .menu-box.menu-root > .menu > .menu-box{
 	position: absolute;
-	left:0; right:0;
+	/* left:0; right:0; */
 }
 .menu-box-direction-row{
 	flex-direction: row;
@@ -38,28 +38,26 @@
 	flex-direction: column;
 }
 /* .menu-box-root{
-
+	
 } */
 
 
 .menu{
-	/* background-color: #ccc; */
 	flex: 0 0 auto;
 	text-align: left;
 	position: relative;
 	list-style: none;
 }
-.menu-root > .menu{
-	/* margin:2px; */
-	margin:0 2px;
-	/* padding:2px 10px; */
-	width:100px
-}
+/* .menu-root > .menu{
+
+} */
 .menu.on > .menu-box{
 	display: flex !important;
 }
+/* .menu.selected{
+
+} */
 .menu-label{
-	/* background-color: rgba(255,0,0,0.1); */
 	display: flex;
 	justify-content: space-between;
 	cursor: pointer;
@@ -68,10 +66,14 @@
 	margin:1px;
 	background-color: #eee;
 }
+.menu-label-text{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	pointer-events: none;
+}
 
 .menu > .menu-box{
-	/* display: none; */
-	/* visibility: hidden; */
 	flex-direction: column;
 	transition: opacity 0.3s;
 	opacity: 0;
@@ -88,8 +90,88 @@
 	background-color: #aaa;
 }
 
+/* .menu-for-mobile{
+	
+} */
+.menu-icon-mobile{
+	height: 2em;
+	width: 2em;
+	padding:0.2em;
+	cursor: pointer;
+}
+.menu-icon-hamburger{
+	display: block;
+	min-height:1em;
+	height:80%;
+	width:80%;
+	margin:10%;
+	
+    background-position: center center;
+    background-repeat: no-repeat;
 
-@media all and (max-width:500px) {
+	background-image: linear-gradient( 0deg , #999 0 20%
+	, transparent 20% 20%, transparent 20% 40%
+	, #999 40% 40%, #999 40% 60%
+	, transparent 60% 60%, transparent 60% 80%
+	, #999 80% 80%, #999 80% 100%
+	);
+	pointer-events: none;
+}
+.menu-icon-close{
+	display: block;
+	min-height:1em;
+	height:80%;
+	width:80%;
+	margin:10%;
+	
+    background-position: center center;
+    background-repeat: no-repeat;
+
+	background-image: 
+		linear-gradient(-45deg, transparent , transparent 0 calc(50% - 1px), #999 calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px) 100%)
+		, linear-gradient(45deg, transparent , transparent 0 calc(50% - 1px), #999 calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px) 100%)
+	;
+	pointer-events: none;
+}
+
+/* for pc */
+@media all and (min-width:500px) {
+	
+	.menu-box.menu-root > .menu > .menu-box{
+		position: absolute;
+		
+	}
+	/* .menu-root > .menu{
+		
+	} */
+	.menu-box.menu-root {
+		display: flex;
+		justify-content: flex-start;
+	}
+	.menu-box:not(.menu-root){
+		transform: translateX(10px);
+		box-shadow: 2px 2px 5px rgba(127,127,127,0.8);
+		background-color: #fff;
+		border:1px solid #999;;
+	}
+	.menu-for-mobile{
+		display: none !important;
+	}
+}
+
+/* for mobile */
+@media all and (max-width:499px) {
+	.menu-container{
+		position: fixed;
+		left:0;right:0;top:0;bottom:0;
+		overflow-y:scroll;
+		display: none;
+		background-color: rgba(127,127,127,0.8);
+		padding: 5px;;
+	}
+	.menu-container.on{
+		display: block;
+	}
 	.menu-box.menu-root > .menu > .menu-box{
 		position: static;
 	}
@@ -106,19 +188,38 @@
 }
 
 
+
+
+
 /*
 style
 */
-.menu-root{
+/* .menu-root{
 	border:1px dotted #000;
-
-}
+	
+} */
 .menu-label{
+	cursor: pointer;
+	padding:5px;
+	border:0px solid #036;
+	color: #036;
+	margin:2px;
+	background-color: #eee;
 	border-radius: 5px;;
 }
-
+.menu.selected > .menu-label{
+	background-color: #d1f2c0;
+}
 .menu-hr{
 	border-radius: 5px;;
+}
+.menu-root > .menu{
+	min-width:100px;
+	max-width:100%;
+}
+.menu-box:not(.menu-root){
+	border-radius: 5px;
+	min-width: 100px;
 }
 
 .menu > .menu-label::after{
@@ -129,12 +230,22 @@ style
 	align-self: center;
 	height:0.2em;
 }
-.menu-has-child > .menu-label::after{
+.menu.menu-has-child > .menu-label::after{
 	background-color: #ccc;
 	transition: all 0.3s;
-
+	
 }
-.menu-has-child.on > .menu-label::after{
+.menu.menu-has-child.on > .menu-label::after{
 	background-color: #7ab6cf;
 	height: 1em;
+}
+.menu-icon-mobile{
+	height: 2em;
+	width: 2em;
+	padding:0.2em;
+	cursor: pointer;
+	background-color: #ddd;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
 }
