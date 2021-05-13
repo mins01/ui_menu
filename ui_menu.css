@@ -52,7 +52,8 @@
 
 } */
 .menu.on > .menu-box{
-	display: flex !important;
+	/* display: flex !important; */
+	display: block !important;
 }
 /* .menu.selected{
 
@@ -205,7 +206,13 @@ style
 	color: #036;
 	margin:2px;
 	background-color: #eee;
-	border-radius: 5px;;
+	border-radius: 5px;
+	flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+.menu-label-text{
+    flex: 0 1 100%;
 }
 .menu.selected > .menu-label{
 	background-color: #d1f2c0;
@@ -229,6 +236,7 @@ style
 	flex: 0 0 auto;
 	align-self: center;
 	height:0.2em;
+
 }
 .menu.menu-has-child > .menu-label::after{
 	background-color: #ccc;

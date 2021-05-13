@@ -78,133 +78,160 @@
 		</div>
 		<hr>
 		<div>
-			<div class="menu-icon-mobile menu-for-mobile" data-menu-toggle="#ui-menu-01">
+			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-01">
 				<div class="menu-icon-hamburger"><div></div></div>
 			</div>
 		</div>
-		<div class="menu-container" id="ui-menu-01" data-menu-dismiss="#ui-menu-01">
+		<div class="menu-container" id="ui-menu-01" data-menu-dismiss="#ui-menu-01" >
 			<div class="menu-for-mobile" style="text-align: right;padding:5px">
-				<div class="menu-icon-mobile" data-menu-dismiss="#ui-menu-01">
+				<div class="menu-icon-mobile" data-menu-dismiss>
 					<div class="menu-icon-close"><div></div></div>
 				</div>
 			</div>
 			
-			<ul class="menu-box menu-root menu-box-direction-row">
+			<ul class="menu-box menu-root menu-box-direction-row" style="z-index: 10;">
 				<li class="menu">
-					<div class="menu-label"><div class="menu-label-text">TOP menu 1</div></div>
+					<div class="menu-label"><div class="menu-label-text">설명</div></div>
 					<ul class="menu-box">
 						<li class="menu">
-							<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">hide menu on mobile</div></div>
-						</li>
-						<li class="menu">
-							<div class="menu-label">menu-label-text가 없어도 됨</div>
-							<ul class="menu-box">
-								<li class="menu" >
-									<div class="menu-label" onclick="ui_menu.close_container(this);event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">close_container()</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-hr"></div>
-								</li>
-								<li class="menu selected" >
-									<div class="menu-label" onclick="ui_menu.select_menu(this)"><div class="menu-label-text">selectable default-selected</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-label" onclick="ui_menu.select_menu(this)"><div class="menu-label-text">selectable</div></div>
-								</li>
-								<li class="menu" >
-									<div class="menu-label menu-selectable"><div class="menu-label-text">selectable</div></div>
-								</li>
-								<li class="menu" >
-									<div class="menu-label menu-selectable"><div class="menu-label-text">selectable</div></div>
-								</li>
-								<li class="menu" id="toggle_menu">
-									<div class="menu-label"><div class="menu-label-text">보이기용 메요</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
-								</li>
-								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
-								</li>
-								
-								
-							</ul>	
-						</li>
-						<li class="menu" id="menu_ex01">
-							<div class="menu-label"><div class="menu-label-text">특정 메뉴 보이기01</div></div>
+							<div class="menu-label"><div class="menu-label-text">attribute</div></div>
 							<ul class="menu-box">
 								<li class="menu">
-									<div class="menu-label" data-menu-dismiss="#ui-menu-01">hide menu on mobile</div>
+									<div class="menu-label" data-menu-dismiss><div class="menu-label-text">data-menu-dismiss</div></div>
 								</li>
 								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
-									<li class="menu">
-										<div class="menu-label"><div class="menu-label-text">abc</div></div>
-										<ul class="menu-box">
-											<li class="menu" id="menu_ex02">
-												<div class="menu-label"><div class="menu-label-text">특정 메뉴 보이기02</div></div>
-											</li>
-											<li class="menu">
-												<div class="menu-label"><div class="menu-label-text">abc</div></div>
-											</li>
-											<li class="menu">
-												<div class="menu-label"><div class="menu-label-text">abc</div></div>
-											</li>
-										</ul>	
-									</li>
+									<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">data-menu-dismiss="#ui-menu-01"</div></div>
+								</li>
+							</ul>
+						</li>
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">className</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 1</div></div>
 								</li>
 								<li class="menu">
-									<div class="menu-label"><div class="menu-label-text">abc</div></div>
+									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 2</div></div>
 								</li>
-							</ul>	
+								<li class="menu">
+									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 3</div></div>
+								</li>
+							</ul>
 						</li>
 						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">abc</div></div>
+							<div class="menu-label"><div class="menu-label-text">method</div></div>
+							<ul class="menu-box">
+								
+								<li class="menu">
+									<div class="menu-label" onclick="ui_menu.open_container(document.querySelector('#ui-menu-02'));event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.open_container(document.querySelector('#ui-menu-02'))</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" onclick="ui_menu.close_container(this);event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.close_container(this)</div></div>
+								</li>
+								<li class="menu" id="close_menu_child">
+									<div class="menu-label" onclick="ui_menu.toggle_menu(this);event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.toggle_menu(this); #close_menu_child</div></div>
+									<ul class="menu-box">
+										<li class="menu">
+											<div class="menu-label" ><div class="menu-label-text">HELLO</div></div>
+										</li>
+									</ul>
+								</li>
+								<li class="menu">
+									<div class="menu-label" onclick="ui_menu.open_menu(document.querySelector('#close_menu_child'));event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.open_menu(document.querySelector('#close_menu_child'))</div></div>
+									<ul class="menu-box">
+										<li class="menu">
+											<div class="menu-label" ><div class="menu-label-text">HELLO</div></div>
+										</li>
+									</ul>
+								</li>
+								<li class="menu">
+									<div class="menu-label" onclick="ui_menu.open_menu(this);event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.open_menu(this)</div></div>
+									<ul class="menu-box">
+										<li class="menu">
+											<div class="menu-label" ><div class="menu-label-text">HELLO</div></div>
+										</li>
+									</ul>
+								</li>
+								<li class="menu" >
+									<div class="menu-label" onclick="ui_menu.close_menu(this);event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.close_menu(this)</div></div>
+									<ul class="menu-box">
+										<li class="menu" id="close_menu_child">
+											<div class="menu-label" ><div class="menu-label-text">#close_menu_child</div></div>
+										</li>
+									</ul>
+								</li>
+								<li class="menu">
+									<div class="menu-label" onclick="ui_menu.select_menu(this);event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.select_menu(this)</div></div>
+								</li>
+							</ul>
 						</li>
-					</ul>	
+						<li class="menu">
+							<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">data-menu-dismiss="#ui-menu-01"</div></div>
+						</li>
+
+					</ul>
+					
 				</li>
-				<li class="menu">
-					<div class="menu-label"><div class="menu-label-text">TOP menu 2</div></div>
-					<ul class="menu-box">
-						<li class="menu" onclick="ui_menu.select_menu(this)">
-							<div class="menu-label"><div class="menu-label-text">selectable</div></div>
-						</li>
-						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">abc</div></div>
-						</li>
-						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">abc</div></div>
-						</li>
-						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">abc</div></div>
-						</li>
-						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">abc</div></div>
-						</li>
-					</ul>	
-				</li>
-				<li class="menu">
-					<div class="menu-label"><div class="menu-label-text">TOP menu 3 -long label mhhhhhmmhhmm mhhhhhmmhhmm mhhhhhmmhhmm</div></div>
-				</li>
+				
 			</ul>
 		</div>
 		<hr>
+		<div>
+			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-02">
+				2
+			</div>
+		</div>
+		<div class="menu-container" id="ui-menu-02" data-menu-dismiss="#ui-menu-02" >
+			<div class="menu-for-mobile" style="text-align: right;padding:5px">
+				<div class="menu-icon-mobile" data-menu-dismiss style="width:auto">
+					닫기
+				</div>
+			</div>
+			
+			<ul class="menu-box menu-root menu-box-direction-row" style="z-index: 9;justify-content: center">
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">설명</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">attribute</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss><div class="menu-label-text">data-menu-dismiss</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">data-menu-dismiss="#ui-menu-01"</div></div>
+								</li>
+							</ul>
+						</li>
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">className</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 2</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 3</div></div>
+								</li>
+							</ul>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">data-menu-dismiss="#ui-menu-01"</div></div>
+						</li>
 
+					</ul>
+					
+				</li>
+				
+			</ul>
+		</div>
+		<hr>
+	</div>
+	<div class="container">
+
+		<!-- debug area -->
 	</div>
 </body>
 </html>

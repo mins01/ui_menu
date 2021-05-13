@@ -1,17 +1,18 @@
 const ui_menu = (function(){
 	let toggle_menu = function(target){
 		let menu_root = target.closest('.menu-root');
+		let menu = target.closest('.menu');
 		if(!menu_root){return;}
-		if(!target.classList.contains('on')){
+		if(!menu.classList.contains('on')){
 			menu_root.querySelectorAll('.menu').forEach(element => {
-				if(element.contains(target)){
+				if(element.contains(target) && element.classList.contains('menu-has-child')){
 					element.classList.add('on');
 				}else{
 					element.classList.remove('on');
 				}
 			});
 		}else{
-			target.classList.remove('on');
+			menu.classList.remove('on');
 		}
 	}
 	let close_menu = function(target){
@@ -26,7 +27,7 @@ const ui_menu = (function(){
 		if(!menu_root){return;}
 		open_container(target)
 		menu_root.querySelectorAll('.menu').forEach(element => {
-			if(element.contains(target)){
+			if(element.contains(target) && element.classList.contains('menu-has-child')){
 				element.classList.add('on');
 			}else{
 				element.classList.remove('on');
@@ -61,16 +62,22 @@ const ui_menu = (function(){
 			if(!menu){return;}
 			toggle_menu(menu);
 		}
-		if(target.hasAttribute('data-menu-toggle')){
-			let element = document.querySelector(target.getAttribute('data-menu-toggle'));
+		if(target.hasAttribute('data-menu-open')){
+			let element = document.querySelector(target.getAttribute('data-menu-open'));
 			if(!element){ return;}
 			// element.classList.toggle('on');
 			open_container(element);
 		}
 		if(target.hasAttribute('data-menu-dismiss')){
-			let element = document.querySelector(target.getAttribute('data-menu-dismiss'));
-			if(!element){ return;}
-			close_container(element)
+			let container = target.getAttribute('data-menu-dismiss');
+			if(container){
+				let element = document.querySelector(container);
+				if(!element){ return;}
+				close_container(element)
+			}else{
+				close_container(target)
+			}
+			
 		}
 		if(target.classList.contains('menu-selectable')){
 			select_menu(target)
