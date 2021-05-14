@@ -27,6 +27,8 @@
 	
 	
 	<link rel="stylesheet" href="ui_menu.css"> 
+	<link rel="stylesheet" href="ui_menu_theme_01.css"> 
+	
 	<script src="ui_menu.js"></script>
 	<script>
 		window.addEventListener('load',function(){
@@ -66,30 +68,35 @@
 			<button class="btn btn-info m-1" onclick="ui_menu.open_menu(document.querySelector('#menu_ex01'));return false">특정 메뉴01(자식 메뉴 있음)</button>
 			<button class="btn btn-info m-1" onclick="ui_menu.open_menu(document.querySelector('#menu_ex02'));return false">특정 메뉴02(자식 메뉴 없음)</button>
 			<br>
+			select menu
+			<button class="btn btn-info m-1" onclick="ui_menu.select_menu(document.querySelector('#menu_ex01'));return false">특정 메뉴01(자식 메뉴 있음)</button>
+			<button class="btn btn-info m-1" onclick="ui_menu.select_menu(document.querySelector('#menu_ex02'));return false">특정 메뉴02(자식 메뉴 없음)</button>
+			<br>
 			close menu
 			<button class="btn btn-info m-1" onclick="ui_menu.close_menu(document.querySelector('#menu_ex01'));return false">특정 메뉴01(자식 메뉴 있음)</button>
 			<button class="btn btn-info m-1" onclick="ui_menu.close_menu(document.querySelector('#menu_ex02'));return false">특정 메뉴02(자식 메뉴 없음)</button>
 			<br>
 			open container
-			<button class="btn btn-info m-1" onclick="ui_menu.open_container(document.querySelector('#menu_ex01'));return false">특정 메뉴01(자식 메뉴 있음)-모바일만 효과있음</button>
+			<button class="btn btn-info m-1" onclick="ui_menu.open_container(document.querySelector('#ui-menu-01'));return false">#ui-menu-01-모바일만 효과있음</button>
 			<br>
 			close container
-			<button class="btn btn-info m-1" onclick="ui_menu.close_container(document.querySelector('#menu_ex01'));return false">특정 메뉴01(자식 메뉴 있음)</button>
+			<button class="btn btn-info m-1" onclick="ui_menu.close_container(document.querySelector('#ui-menu-01'));return false">#ui-menu-01</button>
 		</div>
 		<hr>
+		*. default
 		<div>
 			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-01">
 				<div class="menu-icon-hamburger"><div></div></div>
 			</div>
 		</div>
-		<div class="menu-container" id="ui-menu-01" data-menu-dismiss="#ui-menu-01" >
+		<div class="menu-container menu-theme-01" id="ui-menu-01" data-menu-dismiss>
 			<div class="menu-for-mobile" style="text-align: right;padding:5px">
 				<div class="menu-icon-mobile" data-menu-dismiss>
 					<div class="menu-icon-close"><div></div></div>
 				</div>
 			</div>
 			
-			<ul class="menu-box menu-root menu-box-direction-row" style="z-index: 10;">
+			<ul class="menu-box menu-root menu-box-direction-row " style="z-index: 10;">
 				<li class="menu">
 					<div class="menu-label"><div class="menu-label-text">설명</div></div>
 					<ul class="menu-box">
@@ -102,20 +109,17 @@
 								<li class="menu">
 									<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">data-menu-dismiss="#ui-menu-01"</div></div>
 								</li>
-							</ul>
-						</li>
-						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">className</div></div>
-							<ul class="menu-box">
 								<li class="menu">
-									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 1</div></div>
+									<div class="menu-label" data-menu-selectable ><div class="menu-label-text">data-menu-selectable - 1</div></div>
 								</li>
 								<li class="menu">
-									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 2</div></div>
+									<div class="menu-label" data-menu-selectable ><div class="menu-label-text">data-menu-selectable - 2</div></div>
 								</li>
 								<li class="menu">
-									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 3</div></div>
-								</li>
+									<div class="menu-label" data-menu-selectable ><div class="menu-label-text">data-menu-selectable - 3</div></div>
+								</li><ul class="menu-box">
+									
+								</ul>
 							</ul>
 						</li>
 						<li class="menu">
@@ -145,7 +149,15 @@
 									</ul>
 								</li>
 								<li class="menu">
-									<div class="menu-label" onclick="ui_menu.open_menu(this);event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.open_menu(this)</div></div>
+									<div class="menu-label" onclick="ui_menu.open_menu(document.querySelector('#close_menu_child'));event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.open_menu(document.querySelector('#close_menu_child'))</div></div>
+									<ul class="menu-box">
+										<li class="menu">
+											<div class="menu-label" ><div class="menu-label-text">HELLO</div></div>
+										</li>
+									</ul>
+								</li>
+								<li class="menu">
+									<div class="menu-label" onclick="ui_menu.open_menu(document.querySelector('#ui-menu-02-menu-01'));event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.open_menu(document.querySelector('#ui-menu-02-menu-01'))</div></div>
 									<ul class="menu-box">
 										<li class="menu">
 											<div class="menu-label" ><div class="menu-label-text">HELLO</div></div>
@@ -161,6 +173,14 @@
 									</ul>
 								</li>
 								<li class="menu">
+									<div class="menu-label" onclick="ui_menu.close_menu(document.querySelector('#ui-menu-02-menu-01'));event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.close_menu(document.querySelector('#ui-menu-02-menu-01'))</div></div>
+									<ul class="menu-box">
+										<li class="menu">
+											<div class="menu-label" ><div class="menu-label-text">HELLO</div></div>
+										</li>
+									</ul>
+								</li>
+								<li class="menu">
 									<div class="menu-label" onclick="ui_menu.select_menu(this);event.preventDefault();event.stopPropagation();return false;"><div class="menu-label-text">ui_menu.select_menu(this)</div></div>
 								</li>
 							</ul>
@@ -168,9 +188,90 @@
 						<li class="menu">
 							<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">data-menu-dismiss="#ui-menu-01"</div></div>
 						</li>
-
+						<li class="menu" data-menu-selectable>
+							<div class="menu-label" id="menu_ex01"><div class="menu-label-text">#menu_ex01</div></div>
+							<ul class="menu-box">
+								<li class="menu" data-menu-selectable>
+									<div class="menu-label" id="menu_ex02"><div class="menu-label-text">#menu_ex02</div></div>
+								</li>
+							</ul>
+						</li>
+						
+						
 					</ul>
 					
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 2</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" ><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+									<ul class="menu-box">
+										<li class="menu">
+											<div class="menu-label" ><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+											<ul class="menu-box">
+												<li class="menu">
+													<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1 long text long text long text long text long text long text long text long text long text long text long text</div></div>
+												</li>
+												<li class="menu">
+													<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+												</li>
+												<li class="menu">
+													<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 3</div></div>
+												</li>
+												<li class="menu">
+													<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 4</div></div>
+												</li>
+											</ul>
+										</li>
+										<li class="menu">
+											<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+										</li>
+										<li class="menu">
+											<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 3</div></div>
+										</li>
+										<li class="menu">
+											<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 4</div></div>
+										</li>
+									</ul>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 3</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 4</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 3 긴 메뉴명 긴 메뉴명 긴 메뉴명 긴 메뉴명 긴 메뉴명 긴 메뉴명 긴 메뉴명</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 3</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 4</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
 				</li>
 				
 			</ul>
@@ -181,16 +282,16 @@
 				2
 			</div>
 		</div>
-		<div class="menu-container" id="ui-menu-02" data-menu-dismiss="#ui-menu-02" >
+		<div class="menu-container" id="ui-menu-02" data-menu-dismiss>
 			<div class="menu-for-mobile" style="text-align: right;padding:5px">
 				<div class="menu-icon-mobile" data-menu-dismiss style="width:auto">
 					닫기
 				</div>
 			</div>
-			
-			<ul class="menu-box menu-root menu-box-direction-row" style="z-index: 9;justify-content: center">
+			*. no theme
+			<ul class="menu-box menu-root menu-box-direction-row" style="z-index: 9;">
 				<li class="menu">
-					<div class="menu-label"><div class="menu-label-text">설명</div></div>
+					<div class="menu-label"><div class="menu-label-text">menu-theme-01 적용</div></div>
 					<ul class="menu-box">
 						<li class="menu">
 							<div class="menu-label"><div class="menu-label-text">attribute</div></div>
@@ -201,36 +302,227 @@
 								<li class="menu">
 									<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">data-menu-dismiss="#ui-menu-01"</div></div>
 								</li>
-							</ul>
-						</li>
-						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">className</div></div>
-							<ul class="menu-box">
 								<li class="menu">
-									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 1</div></div>
+									<div class="menu-label" data-menu-selectable ><div class="menu-label-text">data-menu-selectable - 1</div></div>
 								</li>
 								<li class="menu">
-									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 2</div></div>
+									<div class="menu-label" data-menu-selectable ><div class="menu-label-text">data-menu-selectable - 2</div></div>
 								</li>
 								<li class="menu">
-									<div class="menu-label menu-selectable" ><div class="menu-label-text">data-menu-selectable - 3</div></div>
+									<div class="menu-label" data-menu-selectable ><div class="menu-label-text">data-menu-selectable - 3</div></div>
 								</li>
 							</ul>
 						</li>
 						<li class="menu">
 							<div class="menu-label" data-menu-dismiss="#ui-menu-01"><div class="menu-label-text">data-menu-dismiss="#ui-menu-01"</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" id="ui-menu-02-menu-01"><div class="menu-label-text">#ui-menu-02-menu-01</div></div>
+									<ul class="menu-box">
+										<li class="menu">
+											<div class="menu-label" ><div class="menu-label-text">HELLO</div></div>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
-
 					</ul>
-					
 				</li>
-				
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 2</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 3</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 4</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<hr>
+		<div>
+			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-03">
+				3
+			</div>
+		</div>
+		<div class="menu-container" id="ui-menu-03" data-menu-dismiss>
+			
+			*. menu-box-direction-column
+			
+			<ul class="menu-box menu-root menu-box-direction-column menu-theme-01" style="z-index: 8;">
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">menu-box-direction-column</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">attribute</div></div>
+							
+						</li>
+						
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 2</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 3</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 4</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<hr>
+		<div>
+			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-04">
+				4
+			</div>
+		</div>
+		<div class="menu-container" id="ui-menu-04" data-menu-dismiss>
+			
+			*. menu-justify-end
+			<ul class="menu-box menu-root menu-box-direction-row menu-theme-01 menu-justify-end" style="z-index: 7;">
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">menu-justify-end</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">attribute</div></div>
+							
+						</li>
+						
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 2</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 3</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text">TOP MENU - 4</div></div>
+					<ul class="menu-box">
+						<li class="menu">
+							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
+							<ul class="menu-box">
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
 			</ul>
 		</div>
 		<hr>
 	</div>
 	<div class="container">
-
+		
 		<!-- debug area -->
 	</div>
 </body>

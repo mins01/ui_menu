@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/*
+style
+*/
+/* .menu-root{
+	border:1px dotted #000;
+	
+} */
+.menu-theme-01 .menu-label{
+	cursor: pointer;
+	padding:5px;
+	border:0px solid #036;
+	color: #036;
+	margin:2px;
+	background-color: #eee;
+	border-radius: 5px;
+	flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+.menu-theme-01 .menu-label-text{
+    flex: 0 1 100%;
+}
+.menu-theme-01 .menu.selected > .menu-label{
+	background-color: #d1f2c0;
+}
+.menu-theme-01 .menu-hr{
+	border-radius: 5px;;
+}
+.menu-theme-01 .menu-root > .menu{
+	min-width:100px;
+	max-width:100%;
+}
+.menu-theme-01 .menu-box:not(.menu-root){
+	border-radius: 5px;
+	min-width: 100px;
+}
+
+.menu-theme-01 .menu > .menu-label::before{
+	display: block;
+	width:0.2em;
+	content: "";
+	flex: 0 0 auto;
+	align-self: center;
+	height:0.2em;
+	margin-right:0.4em;
+
+}
+.menu-theme-01 .menu.menu-has-child > .menu-label::before{
+	content: "";
+	background-color: #ccc;
+	transition: all 0.3s;
+	
+}
+.menu-theme-01 .menu.menu-has-child.on > .menu-label::before{
+	content: "";
+	background-color: #7ab6cf;
+	height: 1em;
+}
+.menu-theme-01 .menu-icon-mobile{
+	height: 2em;
+	width: 2em;
+	padding:0.2em;
+	cursor: pointer;
+	background-color: #ddd;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+}
+.menu-theme-01 .menu-label:hover {
+	background-color: antiquewhite;;
+}
+
+@media all and (min-width:500px) {
+	
+	.menu-theme-01 .menu{
+		max-width: 300px !important;
+	}
+	.menu-theme-01 .menu-box:not(.menu-root){
+		border:1px solid #ccc;
+	}
+}

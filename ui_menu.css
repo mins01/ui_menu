@@ -2,7 +2,6 @@
 /* .ui-menu{
 	
 } */
-
 .menu-root{
 	/* background-color: #eee; */
 	box-sizing: content-box;
@@ -14,6 +13,7 @@
 	flex-wrap: wrap;
 	padding:0;
 	z-index: 1;
+	margin-bottom:0.5em;
 }
 .menu-box.menu-root{
 	position: relative;
@@ -22,17 +22,12 @@
 .menu-box:not(.menu-root){
 	position: static;
 	display: none;
-	/* min-width:100%; */
-	/* transform: translateX(10px); */
-	margin-bottom:0.5em;
 }
 .menu-box.menu-root > .menu > .menu-box{
 	position: absolute;
-	/* left:0; right:0; */
 }
 .menu-box-direction-row{
 	flex-direction: row;
-	/* justify-content: space-around; */
 }
 .menu-box-direction-column{
 	flex-direction: column;
@@ -55,17 +50,15 @@
 	/* display: flex !important; */
 	display: block !important;
 }
-/* .menu.selected{
-
-} */
+.menu.selected > .menu-label{
+	background-color: #eee;
+}
 .menu-label{
 	display: flex;
 	justify-content: space-between;
 	cursor: pointer;
 	padding:5px;
-	border:1px solid #aaa;
 	margin:1px;
-	background-color: #eee;
 }
 .menu-label-text{
 	white-space: nowrap;
@@ -73,6 +66,20 @@
 	overflow: hidden;
 	pointer-events: none;
 }
+
+/* .menu > .menu-label::after{
+	display: block;
+	content: "";
+	flex: 0 0 auto;
+	align-self: center;
+}
+.menu.menu-has-child > .menu-label::after{
+	content: "<";
+	
+}
+.menu.menu-has-child.on > .menu-label::after{
+	content: ">";
+} */
 
 .menu > .menu-box{
 	flex-direction: column;
@@ -99,6 +106,11 @@
 	width: 2em;
 	padding:0.2em;
 	cursor: pointer;
+	background-color: #ddd;
+	color: #999;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
 }
 .menu-icon-hamburger{
 	display: block;
@@ -138,9 +150,16 @@
 /* for pc */
 @media all and (min-width:500px) {
 	
+	.menu{
+		max-width: 100%;
+	}
 	.menu-box.menu-root > .menu > .menu-box{
 		position: absolute;
-		
+		max-width: 90vw;
+		left:0;right:auto;
+	}
+	.menu-box.menu-root.menu-justify-end  > .menu > .menu-box{
+		left:auto;right:0;
 	}
 	/* .menu-root > .menu{
 		
@@ -149,11 +168,17 @@
 		display: flex;
 		justify-content: flex-start;
 	}
+	.menu-box.menu-root.menu-justify-end{
+		justify-content: flex-end;
+	}
 	.menu-box:not(.menu-root){
 		transform: translateX(10px);
 		box-shadow: 2px 2px 5px rgba(127,127,127,0.8);
 		background-color: #fff;
-		border:1px solid #999;;
+	}
+
+	.menu-justify-end .menu-box:not(.menu-root){
+		transform: translateX(-10px);
 	}
 	.menu-for-mobile{
 		display: none !important;
@@ -186,74 +211,4 @@
 		transform: translateX(0);
 		padding-left:10px;
 	}
-}
-
-
-
-
-
-/*
-style
-*/
-/* .menu-root{
-	border:1px dotted #000;
-	
-} */
-.menu-label{
-	cursor: pointer;
-	padding:5px;
-	border:0px solid #036;
-	color: #036;
-	margin:2px;
-	background-color: #eee;
-	border-radius: 5px;
-	flex-wrap: nowrap;
-    overflow: hidden;
-    justify-content: flex-start;
-}
-.menu-label-text{
-    flex: 0 1 100%;
-}
-.menu.selected > .menu-label{
-	background-color: #d1f2c0;
-}
-.menu-hr{
-	border-radius: 5px;;
-}
-.menu-root > .menu{
-	min-width:100px;
-	max-width:100%;
-}
-.menu-box:not(.menu-root){
-	border-radius: 5px;
-	min-width: 100px;
-}
-
-.menu > .menu-label::after{
-	display: block;
-	width:0.2em;
-	content: "";
-	flex: 0 0 auto;
-	align-self: center;
-	height:0.2em;
-
-}
-.menu.menu-has-child > .menu-label::after{
-	background-color: #ccc;
-	transition: all 0.3s;
-	
-}
-.menu.menu-has-child.on > .menu-label::after{
-	background-color: #7ab6cf;
-	height: 1em;
-}
-.menu-icon-mobile{
-	height: 2em;
-	width: 2em;
-	padding:0.2em;
-	cursor: pointer;
-	background-color: #ddd;
-	border-radius: 5px;
-	display: inline-block;
-	text-align: center;
 }

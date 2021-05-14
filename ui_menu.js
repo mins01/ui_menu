@@ -79,7 +79,7 @@ const ui_menu = (function(){
 			}
 			
 		}
-		if(target.classList.contains('menu-selectable')){
+		if(target.hasAttribute('data-menu-selectable')){
 			select_menu(target)
 		}
 	}
