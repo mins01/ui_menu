@@ -2,7 +2,10 @@
 /* .ui-menu{
 	
 } */
-.menu-root{
+body.menu-on{
+    overflow: hidden;	
+}
+.menu-container{
 	/* background-color: #eee; */
 	box-sizing: content-box;
 	white-space: nowrap;
@@ -15,22 +18,26 @@
 	z-index: 1;
 	margin-bottom:0.5em;
 }
-.menu-box.menu-root{
-	position: relative;
-	display: flex;
-}
-.menu-box:not(.menu-root){
+.menu-box{
 	position: static;
 	display: none;
+	margin: 0;
+	padding: 0;
 }
-.menu-box.menu-root > .menu > .menu-box{
+/* .menu-container > .menu-box{
+	position: relative;
+	display: flex;
+} */
+
+.menu-container > .menu-box > .menu > .menu-box{
 	position: absolute;
 }
-.menu-box-direction-row{
+.menu-box.menu-box-direction-row {
 	flex-direction: row;
 }
-.menu-box-direction-column{
-	flex-direction: column;
+.menu-box.menu-box-direction-column {
+	flex-direction: column !important;
+	flex-wrap: nowrap;
 }
 /* .menu-box-root{
 	
@@ -46,10 +53,9 @@
 /* .menu-root > .menu{
 
 } */
-.menu.on > .menu-box{
-	/* display: flex !important; */
-	display: block !important;
-}
+/* .menu.on > .menu-box{
+	display: flex;
+} */
 .menu.selected > .menu-label{
 	background-color: #eee;
 }
@@ -66,42 +72,25 @@
 	overflow: hidden;
 	pointer-events: none;
 }
-
-/* .menu > .menu-label::after{
-	display: block;
-	content: "";
-	flex: 0 0 auto;
-	align-self: center;
-}
-.menu.menu-has-child > .menu-label::after{
-	content: "<";
-	
-}
-.menu.menu-has-child.on > .menu-label::after{
-	content: ">";
-} */
-
-.menu > .menu-box{
-	flex-direction: column;
-	transition: opacity 0.3s;
-	opacity: 0;
-	
-}
-.menu.on > .menu-box{
-	opacity: 1;
-}
-
-
 .menu-hr{
 	height:1px;
 	margin:1px 1px;
 	background-color: #aaa;
 }
 
+/* .menu-box-scollable-x{
+	flex-wrap: nowrap;
+	overflow-x: auto;
+}
+.menu-box-scollable-y{
+	flex-wrap: nowrap;
+	overflow-y: auto;
+} */
+
 /* .menu-for-mobile{
 	
 } */
-.menu-icon-mobile{
+.menu-btn{
 	height: 2em;
 	width: 2em;
 	padding:0.2em;
@@ -148,49 +137,68 @@
 }
 
 /* for pc */
-@media all and (min-width:500px) {
+@media all and (min-width:576px) {
 	
 	.menu{
 		max-width: 100%;
 	}
-	.menu-box.menu-root > .menu > .menu-box{
+	.menu-container > .menu-box > .menu > .menu-box{
 		position: absolute;
 		max-width: 90vw;
 		left:0;right:auto;
 	}
-	.menu-box.menu-root.menu-justify-end  > .menu > .menu-box{
+	.menu-container > .menu-box.menu-justify-end  > .menu > .menu-box{
 		left:auto;right:0;
 	}
 	/* .menu-root > .menu{
 		
 	} */
-	.menu-box.menu-root {
+	.menu-container > .menu-box {
 		display: flex;
 		justify-content: flex-start;
+		flex-direction: row;
+		box-shadow: 0px 0px 0px rgba(127,127,127,0.8);
 	}
-	.menu-box.menu-root.menu-justify-end{
+	.menu-container > .menu-box.menu-justify-end{
 		justify-content: flex-end;
 	}
-	.menu-box:not(.menu-root){
+	.menu-box{
 		transform: translateX(10px);
 		box-shadow: 2px 2px 5px rgba(127,127,127,0.8);
 		background-color: #fff;
+		flex-direction: column; 
 	}
-
-	.menu-justify-end .menu-box:not(.menu-root){
+	.menu-container > .menu-box{
+		position: relative;
+		display: flex;
+	}
+	.menu.on > .menu-box{
+		display: flex;
+	}
+	.menu-justify-end .menu-box{
 		transform: translateX(-10px);
 	}
 	.menu-for-mobile{
 		display: none !important;
 	}
+
+
+	.menu-box-scollable-x-sm{
+		flex-wrap: nowrap;
+		overflow-x: auto;
+	}
+	.menu-box-scollable-y-sm{
+		overflow-y: auto;
+	}
+	
 }
 
 /* for mobile */
-@media all and (max-width:499px) {
+@media all and (max-width:575px) {
 	.menu-container{
 		position: fixed;
 		left:0;right:0;top:0;bottom:0;
-		overflow-y:scroll;
+		overflow-y:auto;
 		display: none;
 		background-color: rgba(127,127,127,0.8);
 		padding: 5px;;
@@ -198,17 +206,35 @@
 	.menu-container.on{
 		display: block;
 	}
-	.menu-box.menu-root > .menu > .menu-box{
+	.menu-container > .menu-box > .menu > .menu-box{
 		position: static;
 	}
-	.menu-root > .menu{
-		width:auto;
-	}
-	.menu-box.menu-root {
+	.menu-container > .menu-box{
+		position: static;
 		display: block;
 	}
-	.menu-box:not(.menu-root){
+	.menu-container > .menu-box  > .menu{
+		width:auto;
+	}
+	.menu.on > .menu-box {
+		display: block;
+	}
+	.menu-box{
 		transform: translateX(0);
 		padding-left:10px;
+	}
+	/* .menu-box-scollable-x-sm{
+		
+	} */
+	.menu-box-scollable-y-sm{
+		max-height: none !important;
+	}
+	/* .menu-box-scollable-x-xs{
+		flex-wrap: nowrap;
+		overflow-x: auto;
+	} */
+	.menu-box-scollable-y-xs{
+		overflow-y: auto;
+		max-height: 50vh !important;
 	}
 }

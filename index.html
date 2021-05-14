@@ -28,6 +28,7 @@
 	
 	<link rel="stylesheet" href="ui_menu.css"> 
 	<link rel="stylesheet" href="ui_menu_theme_01.css"> 
+	<link rel="stylesheet" href="ui_menu_theme_01_hr.css"> 
 	
 	<script src="ui_menu.js"></script>
 	<script>
@@ -85,18 +86,18 @@
 		<hr>
 		*. default
 		<div>
-			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-01">
+			<div class="menu-btn menu-for-mobile" data-menu-open="#ui-menu-01">
 				<div class="menu-icon-hamburger"><div></div></div>
 			</div>
 		</div>
 		<div class="menu-container menu-theme-01" id="ui-menu-01" data-menu-dismiss>
 			<div class="menu-for-mobile" style="text-align: right;padding:5px">
-				<div class="menu-icon-mobile" data-menu-dismiss>
+				<div class="menu-btn" data-menu-dismiss>
 					<div class="menu-icon-close"><div></div></div>
 				</div>
 			</div>
 			
-			<ul class="menu-box menu-root menu-box-direction-row " style="z-index: 10;">
+			<ul class="menu-box menu-box-direction-row " style="z-index: 10;">
 				<li class="menu">
 					<div class="menu-label"><div class="menu-label-text">설명</div></div>
 					<ul class="menu-box">
@@ -278,18 +279,18 @@
 		</div>
 		<hr>
 		<div>
-			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-02">
+			<div class="menu-btn menu-for-mobile" data-menu-open="#ui-menu-02">
 				2
 			</div>
 		</div>
 		<div class="menu-container" id="ui-menu-02" data-menu-dismiss>
 			<div class="menu-for-mobile" style="text-align: right;padding:5px">
-				<div class="menu-icon-mobile" data-menu-dismiss style="width:auto">
+				<div class="menu-btn" data-menu-dismiss style="width:auto">
 					닫기
 				</div>
 			</div>
 			*. no theme
-			<ul class="menu-box menu-root menu-box-direction-row" style="z-index: 9;">
+			<ul class="menu-box menu-box-direction-row" style="z-index: 9;">
 				<li class="menu">
 					<div class="menu-label"><div class="menu-label-text">menu-theme-01 적용</div></div>
 					<ul class="menu-box">
@@ -380,15 +381,15 @@
 		</div>
 		<hr>
 		<div>
-			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-03">
+			<div class="menu-btn menu-for-mobile" data-menu-open="#ui-menu-03">
 				3
 			</div>
 		</div>
-		<div class="menu-container" id="ui-menu-03" data-menu-dismiss>
+		<div class="menu-container menu-theme-01" id="ui-menu-03" data-menu-dismiss>
 			
 			*. menu-box-direction-column
 			
-			<ul class="menu-box menu-root menu-box-direction-column menu-theme-01" style="z-index: 8;">
+			<ul class="menu-box menu-box-direction-column " style="z-index: 8;">
 				<li class="menu">
 					<div class="menu-label"><div class="menu-label-text">menu-box-direction-column</div></div>
 					<ul class="menu-box">
@@ -451,14 +452,14 @@
 		</div>
 		<hr>
 		<div>
-			<div class="menu-icon-mobile menu-for-mobile" data-menu-open="#ui-menu-04">
+			<div class="menu-btn menu-for-mobile" data-menu-open="#ui-menu-04">
 				4
 			</div>
 		</div>
-		<div class="menu-container" id="ui-menu-04" data-menu-dismiss>
+		<div class="menu-container menu-theme-01" id="ui-menu-04" data-menu-dismiss>
 			
 			*. menu-justify-end
-			<ul class="menu-box menu-root menu-box-direction-row menu-theme-01 menu-justify-end" style="z-index: 7;">
+			<ul class="menu-box menu-box-direction-row  menu-justify-end" style="z-index: 7;">
 				<li class="menu">
 					<div class="menu-label"><div class="menu-label-text">menu-justify-end</div></div>
 					<ul class="menu-box">
@@ -520,6 +521,149 @@
 			</ul>
 		</div>
 		<hr>
+		<div>
+			<div class="menu-btn menu-for-mobile" data-menu-open="#ui-menu-05">
+				5
+			</div>
+		</div>
+		<div class="menu-container menu-theme-01 menu-theme-01-hr" id="ui-menu-05" data-menu-dismiss>
+			
+			*. menu-theme-01-hr , menu-box-scollable-?-??
+			<ul class="menu-box menu-box-direction-row " style="z-index: 6;">
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text"><span style="font-size:40px">🍎</span></div></div>
+					<ul class="menu-box  menu-box-scollable-y-xs" style="max-height:60vh;">
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss ><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss ><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text"><span style="font-size:40px">🥝</span></div></div>
+					<ul class="menu-box menu-box-scollable-x-sm  menu-box-scollable-y-sm">
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss ><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss ><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text"><span style="font-size:40px">🍒</span></div></div>
+					<ul class="menu-box menu-box-scollable-y-sm" style="max-height:140px;">
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss ><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss ><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍎</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🥝</span></div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-selectable data-menu-dismiss><div class="menu-label-text"><span style="font-size:80px">🍒</span></div></div>
+						</li>
+					</ul>
+				</li>
+				<li class="menu">
+					<div class="menu-label"><div class="menu-label-text"><span style="font-size:40px">🍒</span></div></div>
+				</li>
+			</ul>
+			
+		</div>
+		<hr>
+		<div style="height:300px">
+
+		</div>
 	</div>
 	<div class="container">
 		

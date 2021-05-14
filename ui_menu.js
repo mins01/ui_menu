@@ -1,10 +1,10 @@
 const ui_menu = (function(){
 	let toggle_menu = function(target){
-		let menu_root = target.closest('.menu-root');
+		let menu_container = target.closest('.menu-container');
 		let menu = target.closest('.menu');
-		if(!menu_root){return;}
+		if(!menu_container){return;}
 		if(!menu.classList.contains('on')){
-			menu_root.querySelectorAll('.menu').forEach(element => {
+			menu_container.querySelectorAll('.menu').forEach(element => {
 				if(element.contains(target) && element.classList.contains('menu-has-child')){
 					element.classList.add('on');
 				}else{
@@ -23,10 +23,10 @@ const ui_menu = (function(){
 	let open_menu = function(target){
 		let menu = target.closest('.menu');
 		if(!menu){return;}
-		let menu_root = target.closest('.menu-root');
-		if(!menu_root){return;}
+		let menu_container = target.closest('.menu-container');
+		if(!menu_container){return;}
 		open_container(target)
-		menu_root.querySelectorAll('.menu').forEach(element => {
+		menu_container.querySelectorAll('.menu').forEach(element => {
 			if(element.contains(target) && element.classList.contains('menu-has-child')){
 				element.classList.add('on');
 			}else{
@@ -38,25 +38,31 @@ const ui_menu = (function(){
 		let element = target.closest('.menu-container');
 		if(!element){return;}
 		element.classList.remove('on');
+		document.querySelector('body').classList.remove('menu-on');
 		element.querySelectorAll('.menu.on').forEach(element => {
 			element.classList.remove('on')
+			
 		});
 	}
 	let open_container = function(target){
 		let element = target.closest('.menu-container');
 		if(!element){return;}
 		element.classList.add('on');
+		document.querySelector('body').classList.add('menu-on');
 	}
 	let onclick = function(event){
 		let target = event.target;
-		if(target.closest('.menu-event-ignore')){ //이벤트 무시 영역
-			return;
-		}
-		if(!target.closest('.menu-container')){ //전체 닫기
+		
+		if(target.classList.contains('menu-btn')){ //버튼용
+			
+		}else if(target.closest('.menu-event-ignore')){ //이벤트 무시 영역
+			
+		}else if(!target.closest('.menu-container')){ //전체 닫기
 			document.querySelectorAll('.menu-container').forEach(element => {
 				close_container(element)	
 			});
 		}
+
 		if(target.classList.contains('menu-label')){
 			let menu = target.closest('.menu');
 			if(!menu){return;}
@@ -82,13 +88,15 @@ const ui_menu = (function(){
 		if(target.hasAttribute('data-menu-selectable')){
 			select_menu(target)
 		}
+
+		
 	}
 
 	let select_menu = function(target){
-		let menu_root = target.closest('.menu-root');
+		let menu_container = target.closest('.menu-container');
 		target.classList.add('selected')
 
-		menu_root.querySelectorAll('.menu').forEach(element => {
+		menu_container.querySelectorAll('.menu').forEach(element => {
 			if(element.contains(target)){
 				element.classList.add('selected')
 			}else{
