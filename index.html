@@ -26,8 +26,8 @@
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 	
 	
-	<link rel="stylesheet" href="ui_menu2.css"> 
-	<link rel="stylesheet" href="ui_menu2_theme_01.css"> 
+	<link rel="stylesheet" href="ui_menu.css"> 
+	<link rel="stylesheet" href="ui_menu_theme_01.css"> 
 	
 	<script src="ui_menu.js"></script>
 	<script>
@@ -420,30 +420,64 @@
 		</div>
 		<div class="menu-container menu-theme-01" id="ui-menu-03" data-menu-dismiss>
 			
-			*. menu-box-direction-column
+			*. menu-box-vertical
 			
 			<ul class="menu-box menu-box-vertical-sm " style="z-index: 8;">
 				<li class="menu">
-					<div class="menu-label"><div class="menu-label-text">menu-box-direction-column</div></div>
-					<ul class="menu-box">
+					<div class="menu-label"><div class="menu-label-text">menu-box-vertical</div></div>
+					<ul class="menu-box menu-box-collapse">
 						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">attribute</div></div>
-							
+							<div class="menu-label"><div class="menu-label-text">menu-box-collapse</div></div>
+							<ul class="menu-box menu-box-collapse">
+								<li class="menu">
+									<div class="menu-label"><div class="menu-label-text">menu-box-collapse</div></div>
+									<ul class="menu-box menu-box-collapse">
+										<li class="menu">
+											<div class="menu-label"><div class="menu-label-text">menu-box-collapse</div></div>
+										</li>
+										<li class="menu">
+											<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-collapse</div></div>
+										</li>
+										<li class="menu">
+											<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-collapse</div></div>
+										</li>
+									</ul>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-collapse</div></div>
+								</li>
+								<li class="menu">
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-collapse</div></div>
+								</li>
+							</ul>
 						</li>
-						
+						<li class="menu">
+							<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-collapse</div></div>
+						</li>
+						<li class="menu">
+							<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-collapse</div></div>
+						</li>
 					</ul>
 				</li>
 				<li class="menu">
 					<div class="menu-label"><div class="menu-label-text">TOP MENU - 2</div></div>
-					<ul class="menu-box">
+					<ul class="menu-box  menu-box-floating">
 						<li class="menu">
-							<div class="menu-label"><div class="menu-label-text">SUB MENU - 1</div></div>
-							<ul class="menu-box">
+							<div class="menu-label"><div class="menu-label-text">menu-box-floating</div></div>
+							<ul class="menu-box menu-box-floating">
 								<li class="menu">
-									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 1</div></div>
+									<div class="menu-label" ><div class="menu-label-text">menu-box-floating</div></div>
+									<ul class="menu-box menu-box-floating">
+										<li class="menu">
+											<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-floating</div></div>
+										</li>
+										<li class="menu">
+											<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-floating2</div></div>
+										</li>
+									</ul>
 								</li>
 								<li class="menu">
-									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">SUB SUB MENU - 2</div></div>
+									<div class="menu-label" data-menu-dismiss data-menu-selectable><div class="menu-label-text">menu-box-floating2</div></div>
 								</li>
 							</ul>
 						</li>

@@ -90,11 +90,16 @@ style
 		border:0px solid #ccc;
 	}
 	.menu-theme-01 .menu-box{
-		transform: translateX(1em);
+		transform: translateX(20px);
 		border:1px solid #ccc;
 		box-shadow: 2px 2px 5px rgba(127,127,127,0.8);
 		border-radius: 5px;
 		min-width: 100px;
+	}
+	.menu-box.menu-box-collapse,
+	.menu-box-collapse .menu-box{
+		transform: translateX(0px);
+		margin-left: 20px;
 	}
 
 }
@@ -110,9 +115,9 @@ style
 		padding: 5px;;
 	}
 	.menu-theme-01.menu-container > .menu-box{
-		padding-left: 0;
+		margin-left: 0;
 	}
 	.menu-theme-01 .menu-box{
-		padding-left: 1em;
+		margin-left: 20px;
 	}
 }

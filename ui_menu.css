@@ -171,9 +171,14 @@ body.menu-on{
 		flex-direction: column;
 	}
 	.menu-box-floating{
-		position: absolute;
+		position: absolute  !important;
 		z-index: 20;
 	}
+	.menu-box-collapse{
+		position: static !important;
+	}
+
+	
 	/* 2depth 메뉴 전용*/
 	.menu-box.menu-box-bar{
 		position: fixed  !important;
@@ -268,9 +273,9 @@ body.menu-on{
 	.menu.on > .menu-box {
 		display: block;
 	}
-	.menu-box{
+	/* .menu-box{
 
-	}
+	} */
 
 	.menu-box-horizon-xs{
 		flex-direction: row !important;
