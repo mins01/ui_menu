@@ -91,7 +91,7 @@ body.menu-on{
 	overflow-y: auto;
 } */
 
-/* .menu-for-mobile{
+/* .menu-for-mobile , .menu-for-xs{
 	
 } */
 .menu-btn{
@@ -166,6 +166,7 @@ body.menu-on{
 		position: relative;
 		display: flex;
 		z-index: 10;
+		background-color: transparent;
 	}
 	.menu-container > .menu-box > .menu{
 		position: relative;
@@ -239,9 +240,12 @@ body.menu-on{
 	}
 	
 
-	.menu-for-mobile{
+	.menu-for-mobile , .menu-for-xs{
 		display: none !important;
 	}
+	/* .menu-for-sm{
+		display: initial !important;
+	} */
 
 
 	.menu-box-scollable-x-sm{
@@ -284,6 +288,13 @@ body.menu-on{
 
 	} */
 
+
+	/* .menu-for-mobile , .menu-for-xs{
+		display: initial !important;
+	} */
+	.menu-for-sm{
+		display: none !important;
+	}
 	.menu-box-horizon-xs{
 		flex-direction: row !important;
 	}
