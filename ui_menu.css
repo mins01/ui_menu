@@ -6,7 +6,7 @@ body.menu-on{
     overflow: hidden;	
 }
 .menu-container{
-	/* background-color: #eee; */
+	/* background-color: #f8f8f8; */
 	box-sizing: content-box;
 	white-space: nowrap;
 }
@@ -57,7 +57,11 @@ body.menu-on{
 	display: flex;
 } */
 .menu.selected > .menu-label{
-	background-color: #eee;
+	background-color: #f8f8f8;
+}
+.menu-misc{
+	margin:2px;
+	display: block;
 }
 .menu-label{
 	display: flex;
@@ -91,15 +95,16 @@ body.menu-on{
 	
 } */
 .menu-btn{
-	height: 2em;
-	width: 2em;
-	padding:0.2em;
+	height: 34px;
+	width: 34px;
+	padding:4px;
 	cursor: pointer;
 	background-color: #ddd;
 	color: #999;
 	border-radius: 5px;
 	display: inline-block;
 	text-align: center;
+	margin:0px;
 }
 .menu-icon-hamburger{
 	display: block;
